@@ -3,30 +3,31 @@
 // 3 Полученный массив вывести на экран.
 
 // 1 принимаем число 
-Console.WriteLine("Введите число: ");
-int N = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[N];
 
-void FillArray(int[] array)
+int[] FillArray(int[] array, int size)
 {
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < size; i++)
     {
         array[i] = i + 1;
         Console.Write(array[i] + " ");
     }
+    return array;
 }
-void PrintStepenArray(int[] array)
+void PrintStepenArray(int[] array, int size)
 {
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < size; i++)
     {
         double stepen = 3;
         array[i] = (int)Math.Pow(array[i], stepen);
         Console.Write((array[i] + " "));
-
     }
 }
 
-FillArray(array); // создаем массив от 1 до N 
+Console.WriteLine("Введите число: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[N];
+
+int[] FilledArray = FillArray(array, N); // создаем массив от 1 до N 
 Console.WriteLine(); // отделяем визуально 
-PrintStepenArray(array);// Выводим на экран
+PrintStepenArray(FilledArray, N);// Выводим на экран
 
