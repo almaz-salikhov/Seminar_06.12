@@ -30,7 +30,10 @@ double pow = 2;
 // double result = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
 //double result = Math.Sqrt(Math.Pow((x2 - x1), pow) + Math.Pow((y2 - y1), pow) + Math.Pow((z2 - z1), pow));
 
-double result = Math.Sqrt(SquareDiv(x2, x1, pow) + SquareDiv(y2, y1, pow) + SquareDiv(z2, z1, pow));
+int X = SquareDiv(x2, x1, pow); // можно сделать var X — если бы я не знал, какая вернется переменная
+int Y = SquareDiv(y2, y1, pow);
+int Z = SquareDiv(z2, z1, pow);
+double result = Math.Sqrt(X + Y + Z);
 
 Console.WriteLine($"Расстояние между заданными точками равняется: {result}");
 
