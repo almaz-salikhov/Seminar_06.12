@@ -20,5 +20,8 @@ Console.WriteLine($"Координаты первой точки: {x1}, {y1}, {z
 Console.WriteLine($"Координаты второй точки: {x2}, {y2}, {z2}");
 Console.WriteLine();
 
-double result = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+double pow = 2;
+// double result = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+double result = Math.Sqrt(Math.Pow((x2 - x1), pow) + Math.Pow((y2 - y1), pow) + Math.Pow((z2 - z1), pow));
 Console.WriteLine($"Расстояние между заданными точками равняется: {result}");
+
