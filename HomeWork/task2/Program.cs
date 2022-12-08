@@ -2,6 +2,12 @@
 // использовать формулу нахождения расстояния между двумя точками в пространстве 
 // корень суммы квадратов разностей 
 
+int SquareDiv(int a1, int a2, double power) // функция, которая рассчитывает квадрат разности
+{
+    double res = Math.Pow((a2 - a1), power);
+    return (int)res;
+}
+
 Console.WriteLine("Введите координату x1: ");
 int x1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите координату y1: ");
@@ -22,6 +28,9 @@ Console.WriteLine();
 
 double pow = 2;
 // double result = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-double result = Math.Sqrt(Math.Pow((x2 - x1), pow) + Math.Pow((y2 - y1), pow) + Math.Pow((z2 - z1), pow));
+//double result = Math.Sqrt(Math.Pow((x2 - x1), pow) + Math.Pow((y2 - y1), pow) + Math.Pow((z2 - z1), pow));
+
+double result = Math.Sqrt(SquareDiv(x2, x1, pow) + SquareDiv(y2, y1, pow) + SquareDiv(z2, z1, pow));
+
 Console.WriteLine($"Расстояние между заданными точками равняется: {result}");
 
